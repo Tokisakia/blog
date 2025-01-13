@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>博客主页</title>
+	<style>
+     .indented-text {
+            text-indent: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>我的博客</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="article1.html" data-page="article1">文章1</a></li>
+            <li><a href="#" data-page="article2">文章2</a></li>
+            <li><a href="#" data-page="article3">文章3</a></li>
+        </ul>
+    </nav>
+    <main id="content">
+        <h2>欢迎来到我的博客，点击不同栏目查看详情哦。但在此之前，请仔细阅读以下自我介绍，再想想自己是否有勇气点进文章详情吧。</h ></main>
+			<p class="indented-text">欢乐的时光特别短，又到时间说拜拜。大家好，我是本站点的站长，江湖名曰“プリンス　オランチ”，但你知道实际上这只是我在日本活动用的代号。我的正式名称是Hamir Anfauglith，用汉语来说就是哈默.荒原。我是毕业于江城实验高校的一名极其普通的社科生，别的啥也没学到，只学会了要追求公平与正义，看不惯一切反平等的行为。要说我最讨厌的事情，那一定得是权和钱交织下的聚会，人们会声色犬马，会酒池肉林，唯独就把初心忘得一干二净。倒不如说一开始就没有什么初心吧，所谓的口号为民谋福，最后沦为空谈而不自知。他们真的不自知吗？我深表怀疑，但没关系，有你们的存在，我相信我们都有一个光明的未来。你要问为什么？因为我还活着呀，只要我还活着，我就不允许你们胡作非为，我要倡导平权，我要倡导自由，决不能再让别人笑话我们是一个听话的民族，那样的话，就算是老爷子也会心碎的吧。
+                                   哈默.荒原
+                               2025年5月1日
+                                  于杜伊斯堡。</p>
+    <script src="script.js"></script>
+</body>
+
+</html>
