@@ -4,16 +4,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* 设置背景图片，使用 url() 函数指定图片路径 */
-    background-image: url('aijier_4_n-pic.png'); 
-    /* 让背景图的大小适应元素大小，'contain' 表示完整显示图片，可能会有部分元素的背景区域未被覆盖 */
-    background-size: contain; 
-    /* 固定背景图位置，使其始终位于元素中心 */
-    background-position: center; 
-    /* 防止背景图重复 */
-    background-repeat: no-repeat; 
-    /* 让背景图在滚动时保持固定位置，而不是随页面滚动而滚动 */
-    background-attachment: fixed; 
+    background-image: url('aijier_4_n-pic.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 header {
@@ -43,14 +38,14 @@ nav ul li a {
 
 main {
     padding: 20px;
-    max-width: 800px; /* 设置正文部分的最大宽度 */
-    margin: 0 auto; /* 使 main 元素水平居中 */
+    max-width: 800px; /* 设置主体内容的最大宽度 */
+    margin: 0 auto; /* 使主体内容在页面中水平居中 */
 }
 
 .special-text {
     color: red;
     font-family: "华文中宋";
-    font-size: 24px;
+    font-size: 24px; /* 二号字约等于 24px */
 }
 
 .centered-text {
@@ -59,4 +54,8 @@ main {
 
 .indented-text {
     text-indent: 2em;
+}
+
+.larger-text {
+    font-size: 18px;
 }
