@@ -59,3 +59,21 @@ main {
 .larger-text {
     font-size: 18px;
 }
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+	filter: blur(2px); /* 柔化雪花边缘，可调整此值改变柔化程度 */
+    animation: fall linear infinite;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* 让雪花中部更明亮，可调整参数改变效果 */
+}
+
+@keyframes fall {
+    from {
+        top: -50px;
+    }
+
+    to {
+        top: 100vh;
+    }
+}
