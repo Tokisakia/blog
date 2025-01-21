@@ -7,24 +7,54 @@
     <link rel="stylesheet" href="style.css">
     <title>新春活动</title>
     <style>
-     .highlighted-text {
+    .highlighted-text {
             color: red;
             font-family: "华文中宋";
             font-size: 30px; /* 二号字约等于 24px */
             text-align: center;
         }
-     .indented-text {
+
+        .indented-text {
             text-indent: 2em;
         }
-     .larger-text {
+
+        .larger-text {
             color: gainsboro;
             font-size: 20px;
         }
+
+        #snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .snowflake {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: fall linear infinite;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fall {
+            from {
+                top: -50px;
+            }
+            to {
+                top: 100vh;
+            }
+        }
     </style>
-	<script src="https://fastly.jsdelivr.net/npm/live2d-widgets@0/autoload.js"></script>
 </head>
 
 <body>
+	<div id="snowflakes"></div>
     <header>
         <h1 style="text-align: center;">马家庄方寸山R04地块项目部举行新春活动特别报道</h1>
     </header>
@@ -32,7 +62,7 @@
         <ul>
             <li><a href="article1.html" data-page="article1">新春活动</a></li>
             <li><a href="article2.html" data-page="article2">十八天疯人院日记</a></li>
-            <li><a href="#" data-page="article3">待定</a></li>
+            <li><a href="article3.html" data-page="article3">七律·追忆藏王</a></li>
         </ul>
     </nav>
     <main id="content">
@@ -51,6 +81,7 @@
             window.location.href = 'index.html';
         }
     </script>
+	 <script src="snow.js"></script>
 </body>
 
 </html>

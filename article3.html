@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>追忆藏王</title>
+    <style>
+    .highlighted-text {
+            color: red;
+            font-family: "华文中宋";
+            font-size: 30px; /* 二号字约等于 24px */
+            text-align: center;
+        }
+     .indented-text {
+            text-indent: 2em;
+        }
+     .larger-text {
+            color: gainsboro;
+            font-size: 20px;
+        }
+		 #snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .snowflake {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: fall linear infinite;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fall {
+            from {
+                top: -50px;
+            }
+            to {
+                top: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+		<div id="snowflakes"></div>
+        <h1 style="text-align: center;">七律·追忆藏王</h1>
+    </header>
+	 <nav>
+        <ul>
+            <li><a href="article1.html" data-page="article1">新春活动</a></li>
+            <li><a href="article2.html" data-page="article2">十八天疯人院日记</a></li>
+            <li><a href="#" data-page="article3">待定</a></li>
+        </ul>
+    </nav>
+    <main id="content">
+        <h2 class="highlighted-text">七律·追忆藏王</h2>
+      <p class="indented-text larger-text">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;碧海驰驱若电梭，灵姿矫捷破汹波。&nbsp;</p>
+      <p class="indented-text larger-text">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;鱼雷击浪千钧力，火炮穿云万籁歌。&nbsp;</p>
+      <p class="indented-text larger-text">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;屡战盟军何畏死，频经血火未消磨。&nbsp;</p>
+        <p class="indented-text larger-text">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;铁湾一没哀魂葬，后世长嗟叹奈何。</p>
+       <p class="indented-text larger-text">简评：首联描绘藏王号巡洋舰在碧海之上飞驰，如同闪电划过、织布梭子穿梭般敏捷，身姿矫健地冲破汹涌波涛，展现其出色的机动性。颔联特写它装备的鱼雷，出击时能掀起千钧之力的巨浪，大口径火炮开火声响彻云霄，如同奏响震撼的战歌，凸显强大武器装备。颈联叙述它面对盟军，多次战斗从不畏惧死亡，即便历经无数战火，斗志依旧未曾削减。尾联则沉重地落笔于 1944 年 12 月铁底湾的悲剧，藏王被盟军潜艇击沉，全体官兵随舰阵亡，令后人长久叹息，发出无奈感慨，遐想若它未沉，战争走向或许改写。</p>
+        <p class="indented-text larger-text">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;————WOWS砖家萨基尔</p>
+<button onclick="goToIndex()">返回主页</button>
+    </main>
+	<script>
+        function goToIndex() {
+            window.location.href = 'index.html';
+        }
+    </script>
+	 <script src="snow.js"></script>
+</body>
+
+</html>
