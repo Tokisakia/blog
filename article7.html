@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>伪纪录片</title>
+    <style>
+      .highlighted-text {
+            color: red;
+            font-family: "华文中宋";
+            font-size: 30px;
+            text-align: center;
+        }
+      .indented-text {
+            text-indent: 2em;
+        }
+      .larger-text {
+            color: gainsboro;
+            font-size: 20px;
+        }
+      #snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+      .snowflake {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: fall linear infinite;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+       @keyframes fall {
+            from {
+                top: -50px;
+            }
+            to {
+                top: 100vh;
+            }
+        }
+        /* 新增的样式，用于让视频和按钮容器居中 */
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="snowflakes"></div>
+    <header>
+        <h1 style="text-align: center;">伪纪录片</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="article1.html" data-page="article1">新春活动</a></li>
+            <li><a href="article2.html" data-page="article2">十八天疯人院日记</a></li>
+            <li><a href="article3.html" data-page="article3">七律·追忆藏王</a></li>
+            <li><a href="article4.html" data-page="article4">（传记）皖南公司福鼎鑫</a></li>
+            <li><a href="article5.html" data-page="article5">伪纪录片（一夫多妻）</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2 class="highlighted-text">伪纪录片——论一夫多妻的可能性</h2>
+        <!-- 添加 video-container 类 -->
+        <div class="video-container">
+            <video id="videoPlayer" width="1920" height="1080" controls>
+                <source src="伪纪录片——一夫多妻的可能性.mp4" type="video/mp4">
+                你的浏览器不支持视频播放。
+            </video>
+            <button onclick="playVideo()">播放视频</button>
+            <button onclick="pauseVideo()">暂停视频</button>
+        </div>
+        <p class="indented-text larger-text">注意！这是关于笔者抨击残酷社会现实的伪纪录片形式的作品，如果点击观看，请一定要做好心理准备，一旦点击播放，你可能就会感受到前所未有的冲击，并且对你的这么多年来的人生观和价值观产生质疑。不过请放心，就算有质疑，那也只能说明这是你的意志不够坚定。对于有着钢铁般意志的人们来说，看个视频没什么大不了的。即便如此，你还敢打开播放继续看下去吗？或许对你来说，这是个最糟糕的结局。</p>
+        <button onclick="goToIndex()">返回主页</button>
+    </main>
+    <script>
+        function playVideo() {
+            const video = document.getElementById('videoPlayer');
+            video.play();
+        }
+
+        function pauseVideo() {
+            const video = document.getElementById('videoPlayer');
+            video.pause();
+        }
+
+        function goToIndex() {
+            window.location.href = 'index.html';
+        }
+    </script>
+    <script src="snow.js"></script>
+</body>
+
+</html>
