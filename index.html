@@ -87,6 +87,57 @@
       .content-wrapper {
             margin-left: 240px; /* 为侧边栏留出空间，根据侧边栏宽度和间距调整 */
         }
+      /* 搜索框样式 */
+      .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+            padding: 0 20px;
+        }
+      .search-container input {
+            width: 60%;
+            padding: 10px;
+            border: 2px solid #b8860b;
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+      .search-container button {
+            padding: 10px 20px;
+            background-color: #b8860b;
+            color: white;
+            border: 2px solid #b8860b;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+      .search-container button:hover {
+            background-color: #a67908;
+        }
+      #search-results {
+            position: absolute;
+            width: 60%;
+            max-height: 300px;
+            overflow-y: auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            z-index: 100;
+            display: none;
+        }
+      #search-results a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+      #search-results a:hover {
+            background-color: #f5f5f5;
+        }
     </style>
 </head>
 
@@ -102,38 +153,107 @@
             <li><a href="article3.html" data-page="article3">七律·追忆藏王</a></li>
         </ul>
     </nav>
+    <!-- 添加搜索框 -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="搜索文章..." autocomplete="off">
+        <button onclick="searchArticles()">搜索</button>
+        <div id="search-results"></div>
+    </div>
     <div id="sidebar">
         <a href="article3.html">（诗歌）七律·追忆藏王</a>
         <a href="article2.html">（连载小说）十八天疯人院日记</a>
         <a href="article1.html">（要闻）新春喜乐会</a>
         <a href="article4.html">（传记）皖南公司福鼎鑫</a>
         <a href="article6.html">(要闻)复工第一课</a>
-        <a href="article7.html">（休闲）伪纪录片</a>
+        <a href="article7.html">（音乐）破灭剧本</a>
         <a href="article8.html">（脑洞）当秦始皇复活于聊城医院</a>
         <a href="article9.html">（创意）我要我们都好好的</a>
-        <a href="#">文章9</a>
-        <a href="#">文章10</a>
+        <a href="article10.html">（论文）政策与新冠社会态度变化</a>
+        <a href="articles.html" style="background-color: #b8860b; color: white;">更多文章 >></a>
     </div>
     <div class="content-wrapper">
         <main id="content">
             <h2 class="highlighted-text">欢迎来到我的博客，点击不同栏目。但在此之前，请仔细阅读以下自我介绍，再想想自己是否有勇气点进文章详情吧。</h2>
-            <p class="indented-text larger-text">欢乐的时光特别短，又到时间说拜拜。大家好，我是本站点的站长，江湖名曰“プリンス　オランチ”，但你知道实际上这只是我在日本活动用的代号。我的正式名称是 Hamir Anfauglith，用汉语来说就是哈默.荒原。我是毕业于江城实验高校的一名极其普通的社科生，别的啥也没学到，只学会了要追求公平与正义，看不惯一切反平等的行为。要说我最讨厌的事情，那一定得是权和钱交织下的聚会，人们会声色犬马，会酒池肉林，唯独就把初心忘得一干二净。倒不如说一开始就没有什么初心吧，所谓的口号为民谋福，最后沦为空谈而不自知。他们真的不自知吗？我深表怀疑，但没关系，有你们的存在，我相信我们都有一个光明的未来。你要问为什么？因为我还活着呀，只要我还活着，我就不允许你们胡作非为，我要倡导平权，我要倡导自由，决不能再让别人笑话我们是一个听话的民族，那样的话，就算是老爷子也会心碎的吧。</p>
-            <p class="larger-text">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 哈默.荒原</p>
-            <p class="larger-text">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2025年5月1日</p>
-            <p class="larger-text">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;于杜伊斯堡</p>
+            <p class="indented-text larger-text">欢乐的时光特别短，又到时间说拜拜。大家好，我是本站点的站长，江湖名曰"プリンス　オランチ"，但你知道实际上我只是我在日本活动用的代号。我的正式名称是 Hamir Anfauglith，用汉语来说就是哈默.荒原。我是毕业于江城实验高校的一名极其普通的社科生，别的啥也没学到，只学会了要追求公平与正义，看不惯一切反平等的行为。要我说最讨厌的事情，那一定得是权和钱交织下的聚会，人们会声色犬马，会酒池肉林，唯独就把初心忘得一干二净。倒不如说一开始就没有什么初心吧，所谓的口号为民谋福，最后沦为空谈而不自知。他们真的不自知吗？我深表怀疑，但没关系，有你们的存在，我相信我们都有一个光明的未来。你要问为什么？因为我还活着呀，只要我还活着，我就不允许你们胡作非为，我要倡导平权，我要倡导自由，决不能再让别人笑话我们是一个听话的民族，那样的话，就算是老爷子也会心碎的吧。</p>
+            <p class="larger-text">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 哈默.荒原</p>
         </main>
     </div>
-    <footer class="footer-info">
-        <p>狂人最后的港湾 © 2024 - 2025</p>
-        <p>站长联系方式：kurunitokisakia@gmail.com</p>
-        <div class="footer-links">
-            <a href="https://modsanfauglith.vercel.app"><strong><em>友情链接：&nbsp; 模组中心&nbsp; &nbsp;&nbsp;</em></strong></a>
-            <a href="https://www.baidu.com"><strong><em>问询</em></strong><strong><em>中心&nbsp; &nbsp; &nbsp;&nbsp;</em></strong></a>
-            <a href="https://www.mikuclub.win/"><strong><em>初音</em></strong><strong><em>社&nbsp; &nbsp; &nbsp;&nbsp;</em></strong></a>
-        </div>
-    </footer>
-    <script src="snow.js"></script>
+    <script>
+    // 这里是上面提供的搜索功能代码
+    </script>
     <script src="script.js"></script>
+    <script src="snow.js"></script>
 </body>
-
 </html>
+
+<script>
+// 文章数据 - 您可以根据实际情况修改
+const articles = [
+    { id: 'article1', title: '新春活动', content: '新春喜乐会内容...' },
+    { id: 'article2', title: '十八天疯人院日记', content: '疯人院日记内容...' },
+    { id: 'article3', title: '七律·追忆藏王', content: '诗歌内容...' },
+    { id: 'article4', title: '皖南公司福鼎鑫', content: '传记内容...' },
+    { id: 'article6', title: '复工第一课', content: '要闻内容...' },
+    { id: 'article7', title: '破灭剧本', content: '音乐内容...' },
+    { id: 'article8', title: '当秦始皇复活于聊城医院', content: '脑洞内容...' },
+    { id: 'article9', title: '我要我们都好好的', content: '创意内容...' },
+    { id: 'article10', title: '政策与新冠社会态度变化', content: '论文内容...' }
+];
+
+// 搜索文章函数
+function searchArticles() {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const query = searchInput.value.toLowerCase().trim();
+    
+    // 清空之前的搜索结果
+    searchResults.innerHTML = '';
+    
+    if (query === '') {
+        searchResults.style.display = 'none';
+        return;
+    }
+    
+    // 过滤匹配的文章
+    const matchedArticles = articles.filter(article => 
+        article.title.toLowerCase().includes(query) || 
+        article.content.toLowerCase().includes(query)
+    );
+    
+    // 显示搜索结果
+    if (matchedArticles.length > 0) {
+        matchedArticles.forEach(article => {
+            const articleLink = document.createElement('a');
+            articleLink.href = `${article.id}.html`;
+            articleLink.textContent = article.title;
+            searchResults.appendChild(articleLink);
+        });
+        searchResults.style.display = 'block';
+    } else {
+        const noResults = document.createElement('a');
+        noResults.href = '#';
+        noResults.textContent = '没有找到匹配的文章';
+        noResults.style.pointerEvents = 'none';
+        searchResults.appendChild(noResults);
+        searchResults.style.display = 'block';
+    }
+}
+
+// 点击页面其他地方关闭搜索结果
+document.addEventListener('click', function(event) {
+    const searchResults = document.getElementById('search-results');
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.querySelector('.search-container button');
+    
+    if (event.target !== searchInput && event.target !== searchResults && event.target !== searchButton) {
+        searchResults.style.display = 'none';
+    }
+});
+
+// 添加搜索输入框的键盘事件监听
+document.getElementById('search-input').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        searchArticles();
+    }
+});
+</script>
