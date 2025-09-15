@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>所有文章 - 狂人最后的港湾</title>
+    <style>
+        .indented-text {
+            text-indent: 2em;
+        }
+        .highlighted-text {
+            color: cornflowerblue;
+            font-family: "华文中宋";
+            font-size: 30px;
+            text-align: center;
+        }
+        .larger-text {
+            color: gainsboro;
+            font-size: 24px;
+        }
+        #snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .snowflake {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: fall linear infinite;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        @keyframes fall {
+            from {
+                top: -50px;
+            }
+            to {
+                top: 100vh;
+            }
+        }
+        .article-list {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .article-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+        .article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .article-item h3 {
+            color: #b8860b;
+            margin-top: 0;
+        }
+        .article-item .category {
+            display: inline-block;
+            background-color: #b8860b;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #b8860b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #a67908;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="snowflakes"></div>
+    <header>
+        <h1>狂人最后的港湾</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">返回首页</a></li>
+        </ul>
+    </nav>
+    
+    <a href="index.html" class="back-button">← 返回首页</a>
+    
+    <main>
+        <h2 class="highlighted-text">所有文章列表</h2>
+        
+        <div class="article-list">
+            <div class="article-item">
+                <span class="category">诗歌</span>
+                <h3><a href="article3.html">七律·追忆藏王</a></h3>
+            </div>
+            
+            <div class="article-item">
+                <span class="category">连载小说</span>
+                <h3><a href="article2.html">十八天疯人院日记</a></h3>
+            </div>
+            
+            <div class="article-item">
+                <span class="category">要闻</span>
+                <h3><a href="article1.html">新春喜乐会</a></h3>
+            </div>
+            
+            <div class="article-item">
+                <span class="category">传记</span>
+                <h3><a href="article4.html">皖南公司福鼎鑫</a></h3>
+            </div>
+            
+            <div class="article-item">
+                <span class="category">要闻</span>
+                <h3><a href="article6.html">复工第一课</a></h3>
+            </div>
+            
+            <div class="article-item">
+                <span class="category">音乐</span>
+                <h3><a href="article7.html">破灭剧本</a></h3>
+            </div>
+            
+            <div class="article-item">
+                <span class="category">脑洞</span>
+                <h3><a href="article8.html">当秦始皇复活于聊城医院</a></h3>
+            </div>
+            
+            <div class="article-item">
+                <span class="category">创意</span>
+                <h3><a href="article9.html">我要我们都好好的</a></h3>
+            </div>
+            
+            <div class="article-item">
+                <span class="category">论文</span>
+                <h3><a href="article10.html">浅论政策转变民众对新冠相关者的社会态度变化</a></h3>
+            </div>
+            
+            <!-- 这里可以继续添加更多文章 -->
+        </div>
+    </main>
+    
+    <script src="snow.js"></script>
+    <script>
+    // 为文章列表添加动画效果
+    document.addEventListener('DOMContentLoaded', function() {
+        const articleItems = document.querySelectorAll('.article-item');
+        articleItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, 100 * index);
+        });
+    });
+    </script>
+</body>
+</html>
